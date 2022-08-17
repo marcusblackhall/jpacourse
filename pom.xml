@@ -15,6 +15,7 @@
 	<description>John Thompson Spring Jpa course</description>
 	<properties>
 		<java.version>17</java.version>
+		<testcontainers.version>1.17.3</testcontainers.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,37 +37,29 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
+
 		<dependency>
-			<groupId>com.opentable.components</groupId>
-			<artifactId>otj-pg-embedded</artifactId>
-			<version>0.13.1</version>
-			<scope>test</scope>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${testcontainers.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${testcontainers.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.zonky.test.postgres</groupId>
-				<artifactId>embedded-postgres-binaries-bom</artifactId>
-				<version>11.14.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -101,16 +94,16 @@
 		</plugins>
 	</build>
 
-	<profiles>
-		<profile>
-			<id>h2</id>
-			<dependencies>
-				<dependency>
-					<groupId>com.h2database</groupId>
-					<artifactId>h2</artifactId>
-				</dependency>
-			</dependencies>
-		</profile>
-	</profiles>
+<!--	<profiles>-->
+<!--		<profile>-->
+<!--			<id>h2</id>-->
+<!--			<dependencies>-->
+<!--				<dependency>-->
+<!--					<groupId>com.h2database</groupId>-->
+<!--					<artifactId>h2</artifactId>-->
+<!--				</dependency>-->
+<!--			</dependencies>-->
+<!--		</profile>-->
+<!--	</profiles>-->
 
 </project>
