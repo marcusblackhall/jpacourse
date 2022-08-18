@@ -30,6 +30,7 @@
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
+			<version>4.15.0</version>
 		</dependency>
 
 		<dependency>
@@ -80,6 +81,9 @@
 					<changeSetAuthor>MJB</changeSetAuthor>
 					<driver>org.postgresql.Driver</driver>
 					<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+					<systemProperties>
+
+					</systemProperties>
 
 				</configuration>
 				<dependencies>
